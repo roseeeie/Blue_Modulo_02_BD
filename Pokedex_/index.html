@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Pokedex v2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bloco">
+        <img src="/static/logo-blue.gif" width="200" />
+    </div>
+    <div class="bloco">
+
+        <h1 id="pokemon_selecionado">Nenhum pokemon selecionado</h1>
+
+    </div>
+
+    <div class="lista_pokemons">
+
+        {% for pokemon in pokemons%}
+
+        <div class="card_pokemon" data-nome="{{pokemon.nome}}">
+            <div class="imagem_pokemon">
+                <img src="{{caminho_base_imagem}}/{{pokemon.numero}}.png">
+            </div>
+            <!--imagem_pokemon-->
+            <div class="nome_pokemon">
+                <b>{{pokemon.nome}}</b>
+            </div>
+            <!--nome_pokemon-->
+        </div>
+        <!--card_pokemon-->
+
+
+        {% endfor %}
+
+
+    </div>
+    <!--lista_pokemons-->
+    <script type="text/javascript" src="/static/index.js"></script>
+</body>
+
+</html>
